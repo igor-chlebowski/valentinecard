@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Moja Strona w Kropki</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    lorem ipsum
+
+
+    <div class="flipbook">
+    <div class="hard">kartka dla Zosi<small>~ Igor</small></div>
+    <div class="hard"></div>
+    <div>
+      <small>Lets Look At Some Amazing Pokemon ❤️</small>
+      <small>Gotta Catch 'Em All</small>
+    </div>
+    <div>
+      <img src="images/img-1.png" alt="" />
+      <small> Charmandar </small>
+    </div>
+
+    <div class="hard"></div>
+    <div class="hard">Thank You <small>~ HankTheTank</small></div>
+  </div>
+
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <script>
+    $(".flipbook").turn();
+  </script>
+
 </body>
 </html>
