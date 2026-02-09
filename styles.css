@@ -53,8 +53,8 @@ body {
 .flipbook .hard img {
     width: 100%;
     height: 100%;
-    object-fit: cover;    /* Kluczowa linia: wypełnia całą stronę, zachowując proporcje (może lekko przyciąć boki) */
-    display: block;       /* Usuwa dziwną przerwę pod obrazkiem */
+    object-fit: cover;    
+    display: block;     
 } 
 
 .flipbook .hard small{
