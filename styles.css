@@ -101,7 +101,7 @@ body {
     overflow: hidden;
 }
 
-/* Obrazek jako tło strony */
+
 .chomik-bg {
     position: absolute;
     top: 0;
@@ -112,10 +112,9 @@ body {
     z-index: 1;
 }
 
-/* Wspólne style dla przycisków */
 .btn-love {
     position: absolute;
-    z-index: 999 !important; /* Wymuszenie warstwy nad obrazkiem */
+    z-index: 999 !important; 
     padding: 12px 30px;
     font-size: 20px;
     font-weight: bold;
@@ -126,7 +125,7 @@ body {
     transition: transform 0.1s ease;
 }
 
-/* Startowa pozycja TAK (po lewej) */
+
 #yesBtn {
     background-color: #28a745;
     color: white;
@@ -134,11 +133,11 @@ body {
     bottom: 15%;
 }
 
-/* Startowa pozycja NIE (po prawej) */
+
 #noBtn {
     background-color: #dc3545;
     color: white;
     left: 55%;
     bottom: 15%;
-    transition: all 0.15s ease-out; /* Płynna ucieczka */
+    transition: all 0.15s ease-out; 
 }
