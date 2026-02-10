@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moja Strona w Kropki</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
@@ -29,7 +30,8 @@
     <script src="jquery.js"></script>
     <script src="turn.js"></script>
     <script>
-    // Twoja inicjalizacja flipbooka
+    
+    
         const flipbook = $(".flipbook").turn({
             width: 1000,
             height: 600,
@@ -45,21 +47,52 @@
             const rect = container.getBoundingClientRect();
             const btnRect = noBtn.getBoundingClientRect();
 
-            // Obliczamy maksymalne bezpieczne współrzędne wewnątrz kartki
-            // Odejmujemy mały margines (np. 20px), żeby nie utknął przy krawędzi
             const maxX = container.clientWidth - noBtn.offsetWidth - 20;
             const maxY = container.clientHeight - noBtn.offsetHeight - 20;
 
-            // Generujemy pozycję (minimum 10px od brzegu)
+           
             const randomX = Math.max(10, Math.floor(Math.random() * maxX));
             const randomY = Math.max(10, Math.floor(Math.random() * maxY));
 
-            // Ustawiamy nową pozycję względem .chomik-page
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
             noBtn.style.bottom = 'auto'; 
             noBtn.style.right = 'auto';
         });
+
+    document.getElementById('yesBtn').addEventListener('click', function() {
+
+        var scalar = 2;
+        var heart = confetti.shapeFromPath({ path: 'M167 430-74-154c-22-44-10-98 28-129 45-36 109-29 146 16l20 25 20-25c37-45 101-52 146-16 38 31 50 85 28 129L167 430Z' });
+
+
+        var count = 200;
+        var defaults = {
+            origin: { y: 1 }, 
+            spread: 90,       
+            ticks: 200,       
+            gravity: 0.8,    
+            decay: 0.94,     
+            startVelocity: 45,
+            shapes: [heart],  
+            colors: ['#ff69b4', '#ff1493', '#ffc0cb', '#ff0000'] 
+        };
+
+
+        confetti({
+            ...defaults,
+            particleCount: count,
+            scalar: scalar
+        });
+
+        confetti({
+            ...defaults,
+            particleCount: count / 2,
+            scalar: scalar * 0.5
+        });
+
+
+    });
     </script>
 
 </body>

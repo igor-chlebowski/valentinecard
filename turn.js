@@ -153,7 +153,7 @@
       duration: 600,
       page: 1,
       gradients: !0,
-      turnCorners: "bl,br",
+      turnCorners: "tl,tr",
       when: null,
     },
     X = { cornerSize: 100 },
