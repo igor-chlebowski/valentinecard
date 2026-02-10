@@ -12,7 +12,13 @@
     <div class="flipbook">
         <div><img src="images/front.png" alt="" /></div>
         <div><img src="images/askpage.png" alt="" /></div>
-        <div><img src="images/chomikalone.png" alt="" /></div>
+        <div class="chomik-page">
+        <img src="images/chomikalone.png" alt="" />
+        
+            <button id="yesBtn" class="btn-love">TAK</button>
+            <button id="noBtn" class="btn-love">NIE</button>
+        
+        </div>
         
         <div class="last"></div>
 
@@ -23,7 +29,37 @@
     <script src="jquery.js"></script>
     <script src="turn.js"></script>
     <script>
-        $(".flipbook").turn();
+    // Twoja inicjalizacja flipbooka
+        const flipbook = $(".flipbook").turn({
+            width: 1000,
+            height: 600,
+            autoCenter: true,
+            acceleration: true
+        });
+
+        const noBtn = document.getElementById('noBtn');
+        const container = document.querySelector('.chomik-page');
+
+        noBtn.addEventListener('mouseover', function() {
+            
+            const rect = container.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+
+            // Obliczamy maksymalne bezpieczne współrzędne wewnątrz kartki
+            // Odejmujemy mały margines (np. 20px), żeby nie utknął przy krawędzi
+            const maxX = container.clientWidth - noBtn.offsetWidth - 20;
+            const maxY = container.clientHeight - noBtn.offsetHeight - 20;
+
+            // Generujemy pozycję (minimum 10px od brzegu)
+            const randomX = Math.max(10, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(10, Math.floor(Math.random() * maxY));
+
+            // Ustawiamy nową pozycję względem .chomik-page
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.bottom = 'auto'; 
+            noBtn.style.right = 'auto';
+        });
     </script>
 
 </body>

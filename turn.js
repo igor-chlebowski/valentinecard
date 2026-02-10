@@ -141,9 +141,9 @@
           out: "mouseout",
         },
     o = {
-      backward: ["bl", "tl"],
-      forward: ["br", "tr"],
-      all: "tl bl tr br l r".split(" "),
+      backward: ["tl"],
+      forward: ["tr"],
+      all: "tl tr l r".split(" "),
     },
     U = ["single", "double"],
     V = ["ltr", "rtl"],
